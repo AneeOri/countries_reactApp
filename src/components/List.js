@@ -1,5 +1,5 @@
 import { Button, Card,CardActions,CardContent,Typography } from '@mui/material';
-import './list.css';
+import './List.css';
 
 
 export default function List ({items, children, onItemClick}){
