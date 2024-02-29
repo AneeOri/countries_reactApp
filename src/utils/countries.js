@@ -5,5 +5,5 @@ export const getAllCountries = () => {
 };
 
 export const searchByCountryName = (name) => {
-    returnfetch(`${BASE_URL}/name/${name}`).then((response) => response.json());
+    return fetch(`${BASE_URL}/name/${name}`).then((response) => response.json());
 };
