@@ -1,5 +1,5 @@
-import {CircularProgress, responsiveFontSizes} from "@mui/material";
-import { useEffect, useReducer, useState } from "react";
+import {CircularProgress} from "@mui/material";
+import { useEffect, useReducer } from "react";
 import List from "../components/List";
 import { ResponseActionTypes } from "../helper/action";
 import {useNavigate} from "react-router-dom";
