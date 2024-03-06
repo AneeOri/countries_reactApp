@@ -7,6 +7,7 @@ import CountryPage from "./screens/CountryPage";
 
 export default function App(){
   return(
+    //navigation
     <BrowserRouter>
       <>
        <Nav/>
