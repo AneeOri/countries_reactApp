@@ -7,7 +7,7 @@ import {
     createTheme,
     makesStyles,
     ThemeProvider,
-} from "@mui/material";
+} from "@mui/styles";
 import SelectButton from "./SelectButton";
 import {chartDays} from "../config/data";
 import {CryptoState} from "../context/CryptoContext";
