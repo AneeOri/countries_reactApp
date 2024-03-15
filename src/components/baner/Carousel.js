@@ -1,4 +1,4 @@
-import { makeStyles } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
