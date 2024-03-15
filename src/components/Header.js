@@ -1,8 +1,9 @@
-import { AppBar, Container,MenuItem, Select, Toolbar, Typography,Button } from "@mui/material";
+import { AppBar, Container,MenuItem, Select, Toolbar, Typography,Button} from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import makeStyles from '@mui/styles/makeStyles';
 import {useNavigate} from "react-router-dom";
 import { CryptoState } from "../context/CryptoContext";
+
 
 const useStyles = makeStyles((theme) => ({
     title:{
@@ -47,7 +48,7 @@ function Header(){
                      label="Currency"
                      id="demo-simple-select"
                      value={currency}
-                     style={{windth:100, height:40, marginLeft:15}}
+                     style={{windth:100, height:40, marginLeft:15, color:"white"}}
                      onChange={(e) => setCurrency(e.target.value)}
                     >
                        <MenuItem value={"USD"}>USD</MenuItem>
