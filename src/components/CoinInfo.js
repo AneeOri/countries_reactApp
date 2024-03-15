@@ -5,9 +5,9 @@ import {Line} from "react-chartjs-2";
 import {
     CircularProgress,
     createTheme,
-    makesStyles,
     ThemeProvider,
 } from "@mui/styles";
+import { makeStyles } from "@mui/styles";
 import SelectButton from "./SelectButton";
 import {chartDays} from "../config/data";
 import {CryptoState} from "../context/CryptoContext";
@@ -18,7 +18,7 @@ const CoinInfo = ({coin}) => {
   const {currency} = CryptoState();
   const [flag, setFlag] = useState(false);
 
-  const useStyles = makesStyles((theme) => ({
+  const useStyles = makeStyles((theme) => ({
     container: {
         width: "75%",
         display: "flex",
