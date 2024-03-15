@@ -1,15 +1,19 @@
 import React, {useEffect, useState} from "react";
 import { makeStyles } from "@mui/styles";
-import Pagination from "@mui/material";
+import { Pagination } from '@mui/material';
 import{TableCell, Container, createTheme, LinearProgress, ThemeProvider, Typography,
        TextField, TableBody, TableRow, TableHead, TableContainer, Table, Paper} from "@mui/material";
 import axios from "axios";
 import { CoinList } from "../config/api";
-import {useHistory} from "react-router-dom";
+import {useNavigation} from "react-router-dom";
 import { CryptoState } from "../context/CryptoContext";
 
 export function numberWithCommas(x){
+  if(x){
     return x.toString().raplace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+  else
+   return 
 }
 
 export default function CoinsTable(){
@@ -37,7 +41,7 @@ export default function CoinsTable(){
     });
 
     const classes = useStyles();
-    const history = useHistory();
+    const history = useNavigation();
 
     const darkTheme = createTheme({
         palette: {
