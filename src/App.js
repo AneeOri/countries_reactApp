@@ -1,23 +1,27 @@
+import { makeStyles } from "@mui/styles";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import Nav from "./components/Nav";
-import Home from "./screens/HomeScreen";
-import Countries from "./screens/Countries";
 import NotFound from "./components/NotFound";
-import CountryPage from "./screens/CountryPage";
+import Header from "./components/Header";
+
+
+const useStyles = makeStyles(() => ({
+  App:{
+    backgroundColor: "#14161a",
+    color:"white",
+    minHeight:"100vh",
+  },
+}));
 
 export default function App(){
+
+  const clases = useStyles();
   return(
     //navigation
     <BrowserRouter>
-      <>
-       <Nav/>
-       <Routes>
-          <Route index path="/" element={<Home/>}></Route>
-          <Route path="/countries" element={<Countries/>}></Route>
-          <Route path="/countries/:countryId" element={<CountryPage/>}></Route>
-          <Route path="*" element={<NotFound />}></Route>
-       </Routes>
-      </>
+      <div className={clases.App}>
+       <Header/>
+     
+      </div>
     </BrowserRouter>
   );
 }
