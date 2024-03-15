@@ -1,6 +1,7 @@
-import { AppBar, Container,MenuItem, Select, Toolbar, Typography } from "@mui/material";
-import {createTheme, makeStyles, ThemeProvider} from "@mui/styles";
-import {useHistory} from "react-router-dom";
+import { AppBar, Container,MenuItem, Select, Toolbar, Typography,Button } from "@mui/material";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import {useNavigate} from "react-router-dom";
 import { CryptoState } from "../context/CryptoContext";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +27,7 @@ function Header(){
     const clases = useStyles();
     const {currency, setCurrency} = CryptoState();
 
-    const history = useHistory();
+    const history = useNavigate();
 
     return(
         <ThemeProvider theme={darkTheme}>
@@ -39,13 +40,15 @@ function Header(){
                     >
                          Crypto Hunter
                     </Typography>
+                    <Button color="inherit">Login</Button> 
                     <Select
-                      variant="outlined"
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      value={currency}
-                      style={{windth:100, height:40, marginLeft:15}}
-                      onChange={(e) => setCurrency(e.target.value)}
+                     variant="outlined"
+                     labelId="demo-simple-select-label"
+                     label="Currency"
+                     id="demo-simple-select"
+                     value={currency}
+                     style={{windth:100, height:40, marginLeft:15}}
+                     onChange={(e) => setCurrency(e.target.value)}
                     >
                        <MenuItem value={"USD"}>USD</MenuItem>
                        <MenuItem value={"MXN"}>MXN</MenuItem>
