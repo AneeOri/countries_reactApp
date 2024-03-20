@@ -10,7 +10,7 @@ import { CryptoState } from "../context/CryptoContext";
 
 export function numberWithCommas(x){
   if(x){
-    return x.toString().raplace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
   else
    return 
@@ -63,6 +63,7 @@ export default function CoinsTable(){
 
     useEffect(() => {
         fetchCoins();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[currency]);
 
     const handleSearch = () => {
