@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
 import {TrendingCoins} from "../../config/api";
@@ -11,12 +11,12 @@ const Carousel = () => {
     const [trending, setTrending] = useState([]);
     const {currency, symbol} = CryptoState();
 
-    const fetchTrendingCoins = async () => {
+    const fetchTrendingCoins = useCallback( async () => {
         const {data} = await axios.get(TrendingCoins(currency));
 
         console.log(data);
         setTrending(data);
-    };
+    },[currency]);
 
     useEffect(() => {
         fetchTrendingCoins();
