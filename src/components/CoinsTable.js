@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import { makeStyles } from "@mui/styles";
 import { Pagination } from '@mui/material';
 import{TableCell, Container, createTheme, LinearProgress, ThemeProvider, Typography,
@@ -52,19 +52,19 @@ export default function CoinsTable(){
           },
     });
 
-    const fetchCoins = async() => {
+    const fetchCoins = useCallback( async() => {
         setLoading(true);
         const {data} = await axios.get(CoinList(currency));
         console.log(data);
 
         setCoins(data);
         setLoading(false);
-    };
+    },[currency]);
 
     useEffect(() => {
-        fetchCoins();
+        fetchCoins().catch(console.error);
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[currency]);
+    },[currency, fetchCoins]);
 
     const handleSearch = () => {
         return coins.filter(
